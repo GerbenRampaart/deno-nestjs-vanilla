@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller.ts';
 import { AppService } from './app.service.ts';
-import { assert } from "jsr:@std/assert";
+import { assertEquals } from "assert";
 
 Deno.test({
   name: 'AppController',
@@ -12,5 +12,5 @@ Deno.test({
   }).compile();
 
   const appController = app.get<AppController>(AppController);
-  assert(appController.getHello() === 'Hello World!');
+  assertEquals(appController.getHello(), 'Hello World!');
 });

@@ -1,8 +1,23 @@
 {
+  "name": "@redstinkcreature/deno-nestjs-vanilla",
+  "version": "0.0.1",
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "dev": "deno run --watch --allow-net --allow-read --allow-env ./src/main.ts",
+    "test": "deno test --allow-net --allow-read --allow-env ./test/**/*.test.ts"
   }, 
   "compilerOptions": {
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "imports": {
+    "@nestjs/common": "npm:@nestjs/common@10",
+    "@nestjs/core": "npm:@nestjs/core@10",
+    "@nestjs/platform-express": "npm:@nestjs/platform-express@10",
+    "express": "npm:express@4",
+    "reflect-metadata": "npm:^0.2.0",
+    "rxjs": "npm:rxjs@7",
+    "@nestjs/testing": "npm:@nestjs/testing@10",
+    "supertest": "npm:supertest@7",
+    "assert": "jsr:@std/assert"
   }
 }
